@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leandro Dalceggio — Data Analyst | Data Science &amp; AI</title>
+<meta name="description" content="Portfolio of Leandro David Dalceggio. Data analyst and Data Science &amp; AI student, with over 15 years of experience in technology and IT infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --surface:#f8fafc;
+    --surface-2:#f1f5f9;
+    --navy:#0f172a;
+    --text:#0f172a;
+    --muted:#475569;
+    --muted-2:#64748b;
+    --border:#e2e8f0;
+    --border-strong:#cbd5e1;
+    --teal:#0e7490;
+    --teal-dark:#155e75;
+    --teal-deep:#0c4a5e;
+    --teal-light:#ecfeff;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  section{padding:84px 0;border-top:1px solid var(--border)}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--teal);margin-bottom:14px}
+  h2{font-size:1.95rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;color:var(--navy)}
+  .lead{color:var(--muted);max-width:640px;margin-bottom:40px}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);background:rgba(255,255,255,.82);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:800;letter-spacing:-.02em;color:var(--navy)}
+  .brand span{color:var(--teal)}
+  .nav-links{display:flex;gap:28px}
+  .nav-links a{color:var(--muted);font-size:.92rem;font-weight:600;transition:color .2s}
+  .nav-links a:hover{color:var(--teal)}
+  .nav-cta{padding:9px 18px;border-radius:999px;background:var(--teal);color:#fff!important;font-size:.86rem;font-weight:700}
+  .nav-cta:hover{background:var(--teal-dark)}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:84px 0 76px;border-top:none;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 300px at 82% -10%,rgba(14,116,144,.10),transparent 62%),radial-gradient(440px 280px at 6% 6%,rgba(14,116,144,.06),transparent 60%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:48px;align-items:center;position:relative}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+  .role{font-size:.86rem;color:var(--teal);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
+  .hero h1{font-size:3rem;line-height:1.06;letter-spacing:-.03em;font-weight:850;margin-bottom:18px;color:var(--navy)}
+  .hero h1 span{color:var(--teal)}
+  @media(max-width:820px){.hero h1{font-size:2.3rem}}
+  .hero p.bio{color:var(--muted);font-size:1.06rem;max-width:560px;margin-bottom:30px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;font-size:.95rem;transition:transform .15s ease,background .2s ease,border-color .2s}
+  .btn-primary{background:var(--teal);color:#fff;box-shadow:0 10px 24px rgba(14,116,144,.22)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--teal-dark)}
+  .btn-ghost{border:1px solid var(--border-strong);color:var(--navy)}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+
+  .avatar{aspect-ratio:1;border-radius:24px;background:linear-gradient(160deg,#0e7490,#0c4a5e);box-shadow:0 18px 40px rgba(14,116,144,.28);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .avatar::after{content:"";position:absolute;inset:0;background:radial-gradient(160px 160px at 78% 80%,rgba(255,255,255,.14),transparent 60%)}
+  .avatar .initials{font-size:4.2rem;font-weight:850;letter-spacing:-.04em;color:#fff;position:relative}
+  .avatar .tag{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:10px 14px;font-size:.82rem;color:rgba(255,255,255,.85)}
+  .avatar .tag b{color:#fff}
+
+  .stats{display:flex;gap:36px;margin-top:40px;flex-wrap:wrap;position:relative}
+  .stat .num{font-size:1.7rem;font-weight:850;color:var(--teal)}
+  .stat .lbl{font-size:.82rem;color:var(--muted-2)}
+
+  /* SKILLS */
+  .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:760px){.skill-grid{grid-template-columns:1fr}}
+  .skill-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:transform .15s,border-color .2s,box-shadow .2s}
+  .skill-card:hover{transform:translateY(-4px);border-color:var(--teal);box-shadow:0 12px 28px rgba(15,23,42,.06)}
+  .skill-card h3{font-size:1.05rem;margin-bottom:10px;display:flex;align-items:center;gap:10px;color:var(--navy)}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--teal)}
+  .skill-card p{color:var(--muted);font-size:.93rem}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{font-size:.8rem;padding:6px 12px;border-radius:8px;background:var(--teal-light);border:1px solid #cffafe;color:var(--teal-dark);font-weight:600}
+
+  /* EXPERIENCE TIMELINE */
+  .timeline{position:relative;padding-left:28px}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--border)}
+  .tl-item{position:relative;padding:0 0 34px 14px}
+  .tl-item::before{content:"";position:absolute;left:-25px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
+  .tl-item.muted::before{border-color:var(--border-strong)}
+  .tl-role{font-weight:750;font-size:1.08rem;color:var(--navy)}
+  .tl-co{color:var(--teal);font-weight:650;font-size:.95rem}
+  .tl-date{color:var(--muted-2);font-size:.82rem;margin:2px 0 8px}
+  .tl-desc{color:var(--muted);font-size:.95rem;max-width:680px}
+
+  /* PROJECTS */
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:760px){.proj-grid{grid-template-columns:1fr}}
+  .proj-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:12px;transition:transform .15s,border-color .2s,box-shadow .2s}
+  .proj-card:hover{transform:translateY(-4px);border-color:var(--teal);box-shadow:0 12px 28px rgba(15,23,42,.06)}
+  .proj-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .proj-head h3{font-size:1.12rem;color:var(--navy)}
+  .badge{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;padding:5px 10px;border-radius:999px;border:1px dashed var(--teal);color:var(--teal);white-space:nowrap}
+  .badge-done{border:none;background:var(--teal);color:#fff}
+  .proj-card.flagship{border-color:var(--teal);box-shadow:0 12px 28px rgba(14,116,144,.10)}
+  .proj-context{font-size:.8rem;color:var(--muted-2)}
+  .proj-link{display:inline-flex;align-items:center;gap:6px;margin-top:2px;font-size:.86rem;font-weight:700;color:var(--teal)}
+  .proj-link:hover{color:var(--teal-dark)}
+  .proj-card p{color:var(--muted);font-size:.93rem;flex:1}
+  .note{background:var(--teal-light);border:1px solid #cffafe;border-radius:12px;padding:14px 18px;color:var(--teal-dark);font-size:.9rem;margin-bottom:30px}
+  .note b{color:var(--teal-deep)}
+
+  /* EDU + LANG */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.two-col{grid-template-columns:1fr}}
+  .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
+  .panel h3{font-size:1.1rem;margin-bottom:18px;color:var(--navy)}
+  .edu-item{margin-bottom:18px}
+  .edu-item:last-child{margin-bottom:0}
+  .edu-item .t{font-weight:700;color:var(--navy)}
+  .edu-item .s{color:var(--teal);font-size:.92rem}
+  .edu-item .d{color:var(--muted-2);font-size:.82rem}
+  .lang-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .lang-row:last-child{margin-bottom:0}
+  .lang-row .nm{font-weight:650;color:var(--navy)}
+  .bars{display:flex;gap:5px}
+  .bars i{width:26px;height:7px;border-radius:4px;background:var(--border-strong)}
+  .bars i.on{background:var(--teal)}
+
+  /* CONTACT */
+  .contact{background:linear-gradient(160deg,#0f172a,#0c4a5e);border-top:none}
+  .contact .eyebrow{color:#5eead4}
+  .contact h2{color:#fff;font-size:2.2rem}
+  .contact .lead{color:rgba(255,255,255,.78);margin:0 auto 34px;text-align:center}
+  .contact-inner{text-align:center}
+  .contact-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .ccard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:18px 26px;min-width:210px;transition:transform .15s,border-color .2s,background .2s}
+  .ccard:hover{transform:translateY(-3px);border-color:#5eead4;background:rgba(255,255,255,.1)}
+  .ccard .k{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.6)}
+  .ccard .v{font-weight:700;margin-top:4px;color:#fff}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted-2);font-size:.85rem;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">Leandro <span>Dalceggio</span></div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="role">Data Analyst · Data Science &amp; AI</div>
+      <h1>Turning data into <span>measurable impact</span>.</h1>
+      <p class="bio">I'm Leandro Dalceggio. Over 15 years solving problems in technology and IT infrastructure, now focused on data analysis. I combine a solid technical foundation in Python with analytical thinking to turn information into real value.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#contact">Get in touch →</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/leandroggio" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">+15</div><div class="lbl">years in technology</div></div>
+        <div class="stat"><div class="num">Python</div><div class="lbl">data analysis</div></div>
+        <div class="stat"><div class="num">In progress</div><div class="lbl">Data Science &amp; AI degree · Graduating 2027</div></div>
+      </div>
+    </div>
+    <div class="avatar">
+      <div class="initials">LD</div>
+      <div class="tag"><b>Buenos Aires, Argentina</b><br>Available · Remote and hybrid</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">About me</div>
+    <h2>From IT infrastructure to data science</h2>
+    <p class="lead">A transition built on years of hands-on experience solving technical problems.</p>
+    <p style="max-width:760px;color:var(--muted);font-size:1.05rem">
+      My career started in technical support and infrastructure: over a decade managing equipment, networks, and critical systems in organizations such as the "El Cruce" High Complexity Hospital. That path gave me something you can't learn in a course: the ability to understand how systems work end to end and to stay calm while solving problems under pressure.
+    </p>
+    <p style="max-width:760px;color:var(--muted);font-size:1.05rem;margin-top:16px">
+      Today I channel that experience into data. At Merlin Tech I work as a data analyst and support technician, applying Python and analysis to optimize processes. In parallel, I'm pursuing a higher technical degree in Data Science and Artificial Intelligence at IFTS N° 11, deepening my knowledge of statistics, machine learning, and programming. I'm looking for a role where I can grow by contributing analytical rigor and a well-rounded technical perspective.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Skills</div>
+    <h2>Tools and competencies</h2>
+    <p class="lead">A profile that blends solid IT fundamentals with growing analytical skills.</p>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3><span class="dot"></span>Data analysis</h3>
+        <p>Processing, cleaning, and exploring data to extract actionable insights.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Exploratory analysis</span><span class="chip">Data loading</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="dot"></span>Data science &amp; AI</h3>
+        <p>Currently developing through my degree: statistics and machine learning fundamentals.</p>
+        <div class="chips"><span class="chip">Statistics</span><span class="chip">Machine Learning</span><span class="chip">SQL</span><span class="chip">Visualization</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="dot"></span>Technology &amp; infrastructure</h3>
+        <p>Solid foundation in systems, support, and networking built over 15 years.</p>
+        <div class="chips"><span class="chip">Windows Server</span><span class="chip">Active Directory</span><span class="chip">Technical support</span><span class="chip">Networking &amp; cabling</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="dot"></span>Languages</h3>
+        <p>Communication in three languages, with international work experience.</p>
+        <div class="chips"><span class="chip">Spanish (native)</span><span class="chip">English (working)</span><span class="chip">Italian (working)</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="dot"></span>Soft skills</h3>
+        <p>Capabilities developed through coordination and customer service roles.</p>
+        <div class="chips"><span class="chip">Problem-solving</span><span class="chip">Teamwork</span><span class="chip">Attention to detail</span><span class="chip">Coordination</span></div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="dot"></span>Currently learning</h3>
+        <p>Technologies I'm adding as part of my ongoing training.</p>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">scikit-learn</span><span class="chip">Git</span><span class="chip">Matplotlib</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Career path</div>
+    <h2>Professional experience</h2>
+    <p class="lead">A track record that combines data analysis, technical support, and IT infrastructure.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-role">Data Analyst · IT Support Technician</div>
+        <div class="tl-co">Merlin Tech</div>
+        <div class="tl-date">May 2025 — Present · Buenos Aires</div>
+        <div class="tl-desc">I apply data analysis with Python to optimize technology processes and boost the team's operational efficiency, turning scattered information into actionable insights that support better decisions. I collaborate across teams to design tailored solutions, combining a solid technical foundation with a results-driven analytical mindset focused on continuous improvement.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Warehouse Assistant · Logistics</div>
+        <div class="tl-co">CEF — Cooperativa Esercenti Farmacia</div>
+        <div class="tl-date">January 2024 — December 2024 · Cremona, Lombardy, Italy</div>
+        <div class="tl-desc">I managed the full warehouse cycle — receiving, verification, storage, order preparation, and dispatch — maintaining rigorous inventory control that reduced errors and discrepancies. An international experience that strengthened my precision, organizational skills, and process-oriented approach in a demanding environment.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Desktop Support Technician</div>
+        <div class="tl-co">Merlin Tech</div>
+        <div class="tl-date">July 2022 — January 2023 · Argentina</div>
+        <div class="tl-desc">I provided end-to-end technical support and managed Windows Server and Active Directory environments, ensuring operational continuity for users. I led infrastructure projects — structured cabling and video surveillance system installation — resolving incidents independently with a constant focus on service quality and reliability.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">IT Equipment Support Technician</div>
+        <div class="tl-co">"El Cruce" High Complexity Network Hospital — Dr. Néstor Kirchner</div>
+        <div class="tl-date">September 2016 — June 2022 · Greater Buenos Aires</div>
+        <div class="tl-desc">For nearly six years I sustained IT operations at a high-complexity hospital, an environment where system availability is critical to patient care. I was responsible for equipment and peripheral support, structured cabling, and rack and switch maintenance, ensuring reliable infrastructure under high demand and constant pressure.</div>
+      </div>
+      <div class="tl-item muted">
+        <div class="tl-role">Monitoring Operator (Computer Operator)</div>
+        <div class="tl-co">Protección Total — Codecop S.A.</div>
+        <div class="tl-date">August 2013 — September 2016 · Buenos Aires</div>
+        <div class="tl-desc">I operated real-time monitoring systems, interpreting alarm signals, CCTV feeds, and GPS tracking to respond quickly to critical situations. I developed sound judgment for decision-making under pressure and sustained attention to detail across continuous information flows.</div>
+      </div>
+      <div class="tl-item muted">
+        <div class="tl-role">Area Coordinator · Technical Service</div>
+        <div class="tl-co">CodeCop SRL</div>
+        <div class="tl-date">August 2009 — May 2011 · Buenos Aires</div>
+        <div class="tl-desc">I coordinated a team of technicians and field logistics, optimizing routes and response times. I managed customer databases and resolved critical situations while prioritizing customer care, combining operational leadership with organization, clear communication, and a service-oriented approach.</div>
+      </div>
+    </div>
+    <p style="color:var(--muted-2);font-size:.88rem;margin-top:6px">Additional experience in customer service, sales, and hospitality (Italy, 2023). Full history available on my LinkedIn profile.</p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Projects</div>
+    <h2>Featured projects</h2>
+    <p class="lead">Hands-on work that shows my progress applying data to real problems.</p>
+    <div class="note"><b>Flagship projects in progress:</b> a CNN image classifier and an AI agent for warehouse organization. Cards marked "To be completed" are the recommended next projects to round out the portfolio.</div>
+    <div class="proj-grid">
+      <div class="proj-card flagship">
+        <div class="proj-head"><h3>Image classification with CNN — CIFAR-10</h3><span class="badge badge-done">Featured</span></div>
+        <p>Convolutional neural network in TensorFlow/Keras that classifies images into 10 categories with <b>88.6% test accuracy</b>. A 3-block convolutional architecture (64→128→256) with BatchNormalization, Dropout, and data augmentation, trained with EarlyStopping and adaptive learning rate adjustment. Includes a confusion matrix, per-class report, and an interface to classify new images from a file or URL.</p>
+        <div class="proj-context">Team project · Data Science &amp; AI degree, IFTS N° 11</div>
+        <div class="chips"><span class="chip">TensorFlow / Keras</span><span class="chip">CNN</span><span class="chip">Deep Learning</span><span class="chip">Computer Vision</span><span class="chip">Python</span></div>
+        <a class="proj-link" href="https://github.com/leandroggio/cifar10-cnn-classifier" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="proj-card flagship">
+        <div class="proj-head"><h3>AI agent for warehouse organization</h3><span class="badge badge-done">In development</span></div>
+        <p>An AI agent that organizes a physical warehouse, both physically and digitally: tracking products, locations, quantities, measurements, and specifications, and supporting manufactured parts (products made up of other products, i.e. bills of materials or BOM). It answers natural-language questions about stock, location, and composition. Decoupled layered architecture: a deterministic core as the single source of truth, an LLM agent layer that interprets natural language without inventing data, interchangeable channels (CLI, web, and future Telegram and voice), and a future physical signaling layer with LEDs or lasers.</p>
+        <div class="proj-context">Personal project · Under construction (Phase 0: design and project foundation)</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">SQLite / PostgreSQL</span><span class="chip">Claude (LLM)</span><span class="chip">Layered architecture</span><span class="chip">AI agents</span></div>
+        <a class="proj-link" href="https://github.com/leandroggio/agente-inventario-deposito" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-head"><h3>Exploratory data analysis (EDA) in healthcare</h3><span class="badge">To be completed</span></div>
+        <p>Analysis of a public healthcare dataset (wait times, readmissions, or similar): cleaning, exploration, and visualizations in Python answering a specific question.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">EDA</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-head"><h3>Job listings automation</h3><span class="badge">To be completed</span></div>
+        <p>Python pipeline that collects job postings, filters them, and scores them against your profile. This is also the automation phase of this job search project.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Automation</span><span class="chip">Scraping</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-head"><h3>CNN applied to medical imaging</h3><span class="badge">To be completed</span></div>
+        <p>Bringing convolutional neural network experience to healthcare: classifying medical images (e.g. chest X-rays) reusing the same deep learning methodology.</p>
+        <div class="chips"><span class="chip">Keras</span><span class="chip">Deep Learning</span><span class="chip">Healthcare</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDU + LANG -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Education &amp; languages</div>
+    <h2>Education</h2>
+    <p class="lead">Specialized technical training and multilingual communication skills.</p>
+    <div class="two-col">
+      <div class="panel">
+        <h3>Education</h3>
+        <div class="edu-item">
+          <div class="t">Higher Technical Degree in Data Science &amp; AI</div>
+          <div class="s">Instituto de Formación Técnica Superior N° 11</div>
+          <div class="d">March 2025 — August 2027 · Buenos Aires City, Argentina</div>
+        </div>
+        <div class="edu-item">
+          <div class="t">High School Diploma in Humanities and Social Sciences</div>
+          <div class="s">Instituto Ntra. Sra. del Perpetuo Socorro</div>
+          <div class="d">2003 — 2005</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Languages</h3>
+        <div class="lang-row"><span class="nm">Spanish</span><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+        <div class="lang-row"><span class="nm">English</span><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+        <div class="lang-row"><span class="nm">Italian</span><span class="bars"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+        <p style="color:var(--muted-2);font-size:.86rem;margin-top:18px">Recent work experience in Italy (2023–2024), using Italian daily in professional settings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap contact-inner">
+    <div class="eyebrow" style="text-align:center">Contact</div>
+    <h2>Let's work together</h2>
+    <p class="lead">I'm open to opportunities in data analysis and data science, remote or hybrid. Reach out and let's talk.</p>
+    <div class="contact-cards">
+      <a class="ccard" href="mailto:leandro.ggio@gmail.com"><div class="k">Email</div><div class="v">leandro.ggio@gmail.com</div></a>
+      <a class="ccard" href="https://www.linkedin.com/in/leandroggio" target="_blank" rel="noopener"><div class="k">LinkedIn</div><div class="v">/in/leandroggio</div></a>
+      <div class="ccard"><div class="k">Location</div><div class="v">Buenos Aires, Argentina</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Leandro David Dalceggio · Professional portfolio · Data Analyst | Data Science &amp; AI
+</footer>
+
+</body>
+</html>
